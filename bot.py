@@ -4,7 +4,7 @@ import google.generativeai as genai
 import os
 
 # --- Cấu hình API ---
-API_KEY =("AIzaSyDwlowb3Wf2ynjqKduU8t9auZKnbJLoEBk")  # thay nếu muốn hard-code
+API_KEY =("AIzaSyAz-qhdAKYVEQWfbPi-T_SV02hjtPoh1BM")  # thay nếu muốn hard-code
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel("gemini-1.5-flash")
 
