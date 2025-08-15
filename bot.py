@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template_string
+from flask import Flask, request, jsonify, render_template
 import google.generativeai as genai
 import os
 
@@ -20,14 +20,12 @@ def set_api_key(index):
 # Khởi tạo key ban đầu
 set_api_key(0)
 
-# --- Giao diện HTML ---
-PAGE = """ ... (phần HTML/JS giữ nguyên như của bạn) ... """
-
 app = Flask(__name__)
 
+# --- Trang HTML chính ---
 @app.get("/")
 def index():
-    return render_template_string(PAGE)
+    return render_template("index.html")  # file HTML nằm trong thư mục templates/
 
 @app.post("/ask")
 def ask():
@@ -56,4 +54,5 @@ def ask():
     return jsonify({"reply": "Tất cả API key đã hết quota hoặc gặp lỗi."})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))  # để Render nhận port đúng
+    app.run(host="0.0.0.0", port=port, debug=True)
