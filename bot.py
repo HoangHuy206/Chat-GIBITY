@@ -54,5 +54,4 @@ def ask():
     return jsonify({"reply": "Tất cả API key đã hết quota hoặc gặp lỗi."})
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # để Render nhận port đúng
-    app.run(host="0.0.0.0", port=port, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
