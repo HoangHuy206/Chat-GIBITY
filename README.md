@@ -1,8 +1,9 @@
 # Google GIBITY Bot
 
-Chatbot dùng Google Gemini API viết bằng Flask.
+Chatbot dùng Google GIBITY API google ai sudio
 
-## Cách chạy
+## Ctrl + ~ 
 ```bash
 pip install -r requirements.txt
+##Chạy 
 python bot.py
